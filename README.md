@@ -40,6 +40,7 @@ topfive-cinema/
 ├── css/       -> style.css e um CSS exclusivo para cada filme
 ├── js/        -> script.js
 ├── img/       -> logo, capas e imagens de fundo dos filmes
+├── assets/    -> vídeo de fundo dos filmes
 └── docs/      -> documentação do projeto
 ```
 
