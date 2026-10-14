@@ -1,52 +1,68 @@
 <!DOCTYPE html>
+<!--
+  ===========================================================================
+  WALL·E (WALL·E) — gênero: Animação
+  ===========================================================================
+  Página baseada em "modelo-pagina-filme.html". A estrutura (tags, classes,
+  IDs e ordem das seções) segue o modelo e o wireframe:
+  Voltar > Capa + Ficha técnica + Sinopse > Trailer > Onde assistir.
+  Usa um único arquivo de CSS, que estiliza a página inteira
+  (css/filmes/animacao/wall_e.css).
+  ===========================================================================
+-->
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> WALL·E | TopFive Cinema</title>
-    <link rel="stylesheet" href="../../css/style.css">
+    <title>WALL·E | TopFive Cinema</title>
+
+    <!-- CSS único desta página (tema/paleta próprios de WALL·E) -->
     <link rel="stylesheet" href="../../css/filmes/animacao/wall_e.css">
+    <link rel="stylesheet" href="../../css/header.css">
 </head>
+<body data-genero="animacao" data-filme="wall-e">
 
+    <!-- OPÇÃO B: Vídeo de fundo.
+         Para usar: descomente este bloco E comente a OPÇÃO A no CSS
+         (a variável --imagem-fundo e o body::before). -->
 
-<body class="fundo" data-genero="Animação" data-filme=" WALL·E">
+    <video class="fundo-video" autoplay muted loop playsinline aria-hidden="true">
+        <source src="../../assets/video/animacao/wall_e.mp4" type="video/mp4">
+    </video>
 
-    <!-- Cabeçalho da página -->
-    <header>
-        <a href="../../index.html">
-            <img  class="logo" src="../../img/logo.png" alt="TopFive Cinema - página inicial">
-        </a>
+    <header class="headerPrincipal">
+        <div class="conteudoHeader">
 
-        <nav class="menu" aria-label="Menu principal">
-            <ul>
-                <li class="card">
-                    <a href="../../index.html">Início</a>
-                    <a href="../../sobre.html">Sobre</a>
-                    <a href="../../filmes.html">Filmes</a>
-                    <a href="../../contato.html">Contato</a>
-                </li>
-            </ul>
-        </nav>
+            <a class="logo" href="index.html">
+                <img class="imagemLogo" src="../../img/logo-header.svg" alt="TopFive Cinema">
+            </a>
+
+            <button class="botaoMenu" id="botaoMenu" aria-label="Abrir menu">☰</button>
+
+            <nav class="menu" id="menu">
+                <ul>
+                    <li><a class="linkMenu" href="../../sobre.html">Sobre</a></li>
+                    <li><a class="linkMenu" href="../../filmes.html">Filmes</a></li>
+                    <li><a class="linkMenu" href="../../contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-
-    <!-- Definição do conteúdo principal da página -->
     <main>
         <a href="../../filmes.html#animacao" class="botao-voltar">&larr; Voltar para Animação</a>
 
         <article class="filme">
-
-            <!-- Seção que define a capa do filme -->
             <section class="filme-topo" aria-label="Capa e informações do filme">
                 <figure class="filme-capa">
-                    <img src="../../img/filmes/animacao/wall_e.webp" alt="Capa do filme  WALL·E">
+                    <img src="../../img/filmes/animacao/wall_e.webp"
+                         alt="Capa do filme WALL·E">
                     <figcaption>Capa do filme</figcaption>
                 </figure>
 
-                <!-- Seção que define as informações do filme -->
                 <section class="filme-info" aria-label="Informações do filme">
-                    <h1> WALL·E </h1>
-                    <p class="filme-titulo-original">Título original:  WALL·E</p>
+                    <h1>WALL·E</h1>
+                    <p class="filme-titulo-original">Título original: <em>WALL·E</em></p>
 
                     <dl class="filme-ficha">
                         <dt>Gênero</dt>
@@ -62,36 +78,41 @@
                         <dd>8,4</dd>
                     </dl>
 
-                    <!-- Seção que define a sinopse do filme -->
                     <section class="filme-sinopse" aria-labelledby="titulo-sinopse">
                         <h2 id="titulo-sinopse">Sinopse</h2>
-                        <p> Um robô responsável por limpar uma Terra coberta de lixo conhece outro robô e se apaixona por ela. Juntos, eles embarcam em uma jornada que vai mudar o destino da humanidade.
-                        </p>
+                        <p>Um robô responsável por limpar uma Terra coberta de lixo conhece outro robô e se apaixona por ela. Juntos, eles embarcam em uma jornada que vai mudar o destino da humanidade.</p>
                     </section>
                 </section>
             </section>
 
-            <!-- Seção que define o trailer do filme -->
             <section class="filme-trailer" aria-labelledby="titulo-trailer">
                 <h2 id="titulo-trailer">Trailer</h2>
 
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/m5_lIuBXKWk?si=GovqfCp5OU5MLnew" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/m5_lIuBXKWk?si=GovqfCp5OU5MLnew" title="Trailer de WALL·E" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </section>
 
-            <!-- Seção que define onde se pode encontrar o filme -->
             <section class="filme-onde-assistir" aria-labelledby="titulo-onde-assistir">
                 <h2 id="titulo-onde-assistir">Onde assistir</h2>
                 <ul>
-                    <li>Disney+ (assinatura) <a href="https://www.disneyplus.com/pt-br/browse/entity-280395a4-d5ef-4dd0-bd09-d91c31593d3d" target="_blank">Veja o Filme!</a></li>
+                     <li>Disney+ (assinatura) <a href="https://www.disneyplus.com/pt-br/browse/entity-280395a4-d5ef-4dd0-bd09-d91c31593d3d" target="_blank">Veja o Filme!</a></li>
                 </ul>
             </section>
         </article>
     </main>
 
-
-    <footer>
-        <p>TopFive Cinema - 2026</p>
+    <footer class="rodapePrincipal">
+        <span class="linhaRodape" aria-hidden="true"></span>
+        <nav class="menuRodape" aria-label="Rodapé">
+            <p>Top Five Cinema™ - 2026</p>
+            <a href="sobre.html">Sobre</a>
+            <a href="filmes.html">Filmes</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+        <span class="linhaRodape" aria-hidden="true"></span>
     </footer>
+
+
+    <script src="../../js/header.js"></script>
 
 </body>
 </html>
