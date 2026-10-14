@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>O Senhor dos Anéis: O Retorno do Rei | TopFive Cinema</title>
+
+    <!-- CSS único desta página (tema/paleta próprios de O Senhor dos Anéis: O Retorno do Rei) -->
+    <link rel="stylesheet" href="../../css/filmes/aventura/o_senhor_dos_aneis_o_retorno_do_rei.css">
+    <link rel="stylesheet" href="../../css/header.css">
+</head>
+<body data-genero="aventura" data-filme="o-senhor-dos-aneis-o-retorno-do-rei">
+
+    <!-- OPÇÃO B: Vídeo de fundo.
+         Para usar: descomente este bloco E comente a OPÇÃO A no CSS
+         (a variável --imagem-fundo e o body::before). -->
+    <!---->
+    <video class="fundo-video" autoplay muted loop playsinline aria-hidden="true">
+        <source src="../../assets/video/aventura/o_senhor_dos_aneis_o_retorno_do_rei.mp4" type="video/mp4">
+    </video>
+
+
+    <header class="headerPrincipal">
+        <div class="conteudoHeader">
+
+            <a class="logo" href="index.html">
+                <img class="imagemLogo" src="../../img/logo-header.svg" alt="TopFive Cinema">
+            </a>
+
+            <button class="botaoMenu" id="botaoMenu" aria-label="Abrir menu">☰</button>
+
+            <nav class="menu" id="menu">
+                <ul>
+                    <li><a class="linkMenu" href="../../sobre.html">Sobre</a></li>
+                    <li><a class="linkMenu" href="../../filmes.html">Filmes</a></li>
+                    <li><a class="linkMenu" href="../../contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <a href="../../filmes.html#aventura" class="botao-voltar">&larr; Voltar para Aventura</a>
+
+        <article class="filme">
+            <section class="filme-topo" aria-label="Capa e informações do filme">
+                <figure class="filme-capa">
+                    <img src="../../img/filmes/aventura/o_senhor_dos_aneis_o_retorno_do_rei.webp"
+                         alt="Capa do filme O Senhor dos Anéis: O Retorno do Rei">
+                    <figcaption>Capa do filme</figcaption>
+                </figure>
+
+                <section class="filme-info" aria-label="Informações do filme">
+                    <h1>O Senhor dos Anéis: O Retorno do Rei</h1>
+                    <p class="filme-titulo-original">Título original: <em>The Lord of the Rings: The Return of the King</em></p>
+
+                    <dl class="filme-ficha">
+                        <dt>Gênero</dt>
+                        <dd>Aventura</dd>
+
+                        <dt>Ano</dt>
+                        <dd>2003</dd>
+
+                        <dt>Direção</dt>
+                        <dd>Peter Jackson</dd>
+
+                        <dt>Nota IMDb</dt>
+                        <dd>9,0</dd>
+                    </dl>
+
+                    <section class="filme-sinopse" aria-labelledby="titulo-sinopse">
+                        <h2 id="titulo-sinopse">Sinopse</h2>
+                        <p>Gandalf e Aragorn lideram os homens contra o exército de Sauron para atrair a atenção do Senhor das Trevas e afastá-la de Frodo e Sam, que se aproximam do Monte da Perdição com o Um Anel.</p>
+                    </section>
+                </section>
+            </section>
+
+            <section class="filme-trailer" aria-labelledby="titulo-trailer">
+                <h2 id="titulo-trailer">Trailer</h2>
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/LiKeQrChkTY?si=pjHDNoom3ONVhvfe" title="Trailer de O Senhor dos Anéis: O Retorno do Rei" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </section>
+
+            <section class="filme-onde-assistir" aria-labelledby="titulo-onde-assistir">
+                <h2 id="titulo-onde-assistir">Onde assistir</h2>
+                <ul>
+                    <li>HBO Max (assinatura) <a href="https://www.hbomax.com/br/pt/movie/ad704585-6774-4d37-8c61-1bd41154173f?utm_source=universal_search" target="_blank" rel="noopener noreferrer" aria-label="Veja o filme O Senhor dos Anéis: O Retorno do Rei na HBO Max (abre em nova aba)">Veja o Filme!</a></li>
+                    <li>Disney+ (assinatura) <a href="https://www.disneyplus.com/pt-br/browse/entity-ecf6cb2a-5ff2-41ec-8ea2-6b4d6f04335d" target="_blank" rel="noopener noreferrer" aria-label="Veja o filme O Senhor dos Anéis: O Retorno do Rei na Disney+ (abre em nova aba)">Veja o Filme!</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer class="rodapePrincipal">
+        <span class="linhaRodape" aria-hidden="true"></span>
+        <nav class="menuRodape" aria-label="Rodapé">
+            <p>Top Five Cinema™ - 2026</p>
+            <a href="sobre.html">Sobre</a>
+            <a href="filmes.html">Filmes</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+        <span class="linhaRodape" aria-hidden="true"></span>
+    </footer>
+
+
+    <script src="../../js/header.js"></script>
+
+</body>
+</html>
