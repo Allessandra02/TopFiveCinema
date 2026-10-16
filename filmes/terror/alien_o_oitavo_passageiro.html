@@ -1,0 +1,120 @@
+<!--
+  ===========================================================================
+ Alien — gênero: Terror
+  ===========================================================================
+  Página baseada em "modelo-pagina-filme.html". A estrutura (tags, classes,
+  IDs e ordem das seções) segue o modelo e o wireframe:
+  Voltar > Capa + Ficha técnica + Sinopse > Trailer > Onde assistir.
+  Usa um único arquivo de CSS, que estiliza a página inteira
+  (css/filmes/terror/alien_o_oitavo_passageiro.css).
+  ===========================================================================
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alien  | TopFive Cinema</title>
+
+    <!-- CSS único desta página (tema/paleta próprios de O Silêncio dos inocentes) -->
+    <link rel="stylesheet" href="../../css/filmes/terror/alien_o_oitavo_passageiro.css">
+    <link rel="stylesheet" href="../../css/header.css">
+</head>
+<body data-genero="terror" data-filme="Alien ">
+
+    <!-- OPÇÃO B: Vídeo de fundo.
+         Para usar: descomente este bloco E comente a OPÇÃO A no CSS
+         (a variável --imagem-fundo e o body::before). -->
+   
+
+      <video class="fundo-video" autoplay muted loop playsinline aria-hidden="true">
+        <source src="../../assets/video/terror/Fundo_Alien.mp4" type="video/mp4">
+    </video> 
+ 
+
+    <header class="headerPrincipal">
+        <div class="conteudoHeader">
+
+            <a class="logo" href="../../index.html">
+                <img class="imagemLogo" src="../../img/logo-header.svg" alt="TopFive Cinema">
+            </a>
+
+            <button class="botaoMenu" id="botaoMenu" aria-label="Abrir menu">☰</button>
+
+            <nav class="menu" id="menu">
+                <ul>
+                    <li><a class="linkMenu" href="../../sobre.html">Sobre</a></li>
+                    <li><a class="linkMenu" href="../../filmes.html">Filmes</a></li>
+                    <li><a class="linkMenu" href="../../contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <a href="../../filmes.html#terror" class="botao-voltar">&larr; Voltar para Terror</a>
+
+        <article class="filme">
+            <section class="filme-topo" aria-label="Capa e informações do filme">
+                <figure class="filme-capa">
+                    <img src="../../img/filmes/terror/alien_o_oitavo_passageiro.webp"
+                         alt="Capa do filme Alien, o 8º Passageiro">
+                    <figcaption>Capa do filme</figcaption>
+                </figure>
+
+                <section class="filme-info" aria-label="Informações do filme">
+                    <h1>Alien, o 8º Passageiro</h1>
+                    <p class="filme-titulo-original">Título original: <em>Alien</em></p>
+
+                    <dl class="filme-ficha">
+                        <dt>Gênero</dt>
+                        <dd>Terror</dd>
+
+                        <dt>Ano</dt>
+                        <dd>1979</dd>
+
+                        <dt>Direção</dt>
+                        <dd>Ridley Scott</dd>
+
+                        <dt>Nota IMDb</dt>
+                        <dd>8,5</dd>
+                    </dl>
+
+                    <section class="filme-sinopse" aria-labelledby="titulo-sinopse">
+                        <h2 id="titulo-sinopse">Sinopse</h2>
+                        <p>Ao investigar uma misteriosa transmissão de origem desconhecida, a tripulação de uma nave comercial encontra uma forma de vida mortal.</p>
+                    </section>
+                </section>
+            </section>
+
+            <section class="filme-trailer" aria-labelledby="titulo-trailer">
+                <h2 id="titulo-trailer">Trailer</h2>
+
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/jQ5lPt9edzQ" title="Alien, o 8º Passageiro | Trailer Oficial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </section>
+
+            <section class="filme-onde-assistir" aria-labelledby="titulo-onde-assistir">
+                <h2 id="titulo-onde-assistir">Onde assistir</h2>
+                <ul>
+                    <li>Disney+ (assinatura) <a href="https://www.disneyplus.com/pt-br/browse/entity-27389b6b-bf27-45a6-afdf-cef0fe723cff" target="_blank" rel="noopener noreferrer" aria-label="Veja o filme Alien, o 8º Passageiro na Disney+ (abre em nova aba)">Veja o Filme!</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer class="rodapePrincipal">
+        <span class="linhaRodape" aria-hidden="true"></span>
+        <nav class="menuRodape" aria-label="Rodapé">
+            <p>Top Five Cinema™ - 2026</p>
+            <a href="../../sobre.html">Sobre</a>
+            <a href="../../filmes.html">Filmes</a>
+            <a href="../../contato.html">Contato</a>
+        </nav>
+        <span class="linhaRodape" aria-hidden="true"></span>
+    </footer>
+
+
+    <script src="../../js/header.js"></script>
+
+</body>
+</html>
