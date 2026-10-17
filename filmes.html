@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/filmes.css">
+    <title>Filmes | Top Five Cinema</title>
+</head>
+
+<body>
+    <header class="headerPrincipal">
+        <div class="conteudoHeader">
+
+            <a class="logo" href="index.html">
+                <img class="imagemLogo" src="./img/logo-header.svg" alt="TopFive Cinema">
+            </a>
+
+            <button class="botaoMenu" id="botaoMenu">☰</button>
+
+            <nav class="menu" id="menu">
+                <ul>
+                    <li><a class="linkMenu" href="sobre.html">Sobre</a></li>
+                    <li><a class="linkMenu" href="filmes.html">Filmes</a></li>
+                    <li><a class="linkMenu" href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="secaoPrincipal secaoGenero">
+            <div class="holofote" aria-hidden="true"></div>
+            <div class="conteudoSecaoPrincipal">
+                <a class="linkVoltar" href="index.html">‹ Voltar</a>
+                <h1 class="tituloPrincipal" id="tituloGenero">Filmes</h1>
+                <p class="descricaoPrincipal" id="fraseGenero"></p>
+            </div>
+        </section>
+
+        <section class="secaoFilmes">
+            <nav class="faixaGeneros" id="faixaGeneros" aria-label="Gêneros"></nav>
+
+            <div class="barraFiltros">
+                <div class="abasFiltro" role="group" aria-label="Ordenar filmes">
+                    <button class="abaFiltro abaAtiva" type="button" data-ordem="nota" aria-pressed="true">Mais bem
+                        avaliados</button>
+                    <button class="abaFiltro" type="button" data-ordem="lancamento"
+                        aria-pressed="false">Lançamentos</button>
+                </div>
+
+                <label class="rotuloEpoca">
+                    Época
+                    <select class="seletorEpoca" id="seletorEpoca">
+                        <option value="todas">Todas</option>
+                        <option value="ouro">Era de ouro (até 1960)</option>
+                        <option value="meio">1961 a 1999</option>
+                        <option value="atual">2000 em diante</option>
+                    </select>
+                </label>
+
+                <p class="contagemFilmes" id="contagemFilmes" aria-live="polite"></p>
+            </div>
+
+            <ul class="listaFilmes" id="listaFilmes"></ul>
+        </section>
+    </main>
+
+    <footer class="rodapePrincipal">
+        <span class="linhaRodape" aria-hidden="true"></span>
+        <nav class="menuRodape" aria-label="Rodapé">
+            <a href="sobre.html">Sobre</a>
+            <a href="filmes.html">Filmes</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+        <span class="linhaRodape" aria-hidden="true"></span>
+    </footer>
+
+    <script src="./js/filmes-dados.js"></script>
+    <script src="js/filmes.js"></script>
+    <script src="js/header.js"></script>
+</body>
+
+</html>
