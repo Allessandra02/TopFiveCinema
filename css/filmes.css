@@ -1,0 +1,341 @@
+/* ==========================================
+   TopFive Cinema - Página de filmes
+   ========================================== 
+
+   Esse arquivo é carregado depois do header.css e do index.css,
+   então o reset, o banner e o rodape
+   já vêm deles. Aqui só ficou o que é só da página de filmes.
+
+   Seções:
+   1. Cores
+   2. Banner do gênero
+   3. Botões de gênero
+   4. Filtros
+   5. Cartões dos filmes
+   6. Responsivo
+*/
+
+
+/* ---------- 1. CORES ---------- */
+
+/* O filmes.js troca --amarelo, --azulEscuro e --amareloRgb de acordo
+   com o genero. O --amareloRgb existe porque o rgba() nao aceita
+   a cor em hexadecimal, então preciso dela em números (R, G, B).
+   Esse aqui é nosso dourado padrão) */
+:root {
+  --amareloRgb: 242, 181, 68;
+  --ouroBorda: rgba(var(--amareloRgb), 0.45);
+}
+
+/* O header.css tinha o brilho dourado fixo, aqui ele acompanha o gênero */
+.headerPrincipal {
+  background:
+    radial-gradient(ellipse 60% 140% at 50% 120%, rgba(var(--amareloRgb), 0.14), transparent 70%),
+    var(--azulEscuro);
+}
+
+
+/* ---------- 2. BANNER DO GÊNERO ---------- */
+
+.secaoGenero {
+  min-height: 0;
+  padding: 1.5rem 5% 2.5rem;
+}
+
+/* Os raios do banner, na cor do gênero (ele me endoidaram) */
+.secaoGenero .holofote {
+  background:
+    radial-gradient(ellipse 45% 70% at 92% 45%, rgba(var(--amareloRgb), 0.35), transparent 70%),
+    repeating-conic-gradient(from 200deg at 100% 45%,
+      rgba(var(--amareloRgb), 0.12) 0deg 3deg,
+      transparent 3deg 9deg);
+}
+
+.secaoGenero .tituloPrincipal {
+  margin-bottom: 0.5rem;
+}
+
+.secaoGenero .descricaoPrincipal {
+  margin-bottom: 0;
+}
+
+.linkVoltar {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  color: var(--cinzaClaro);
+  text-decoration: none;
+}
+
+.linkVoltar:hover {
+  color: var(--amarelo);
+}
+
+
+/* ---------- 3. BOTÕES DE GÊNERO ---------- */
+
+.secaoFilmes {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem 5% 3rem;
+}
+
+/* No celular essa faixa rola pro lado por causa do overflow-x  */
+.faixaGeneros {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.4rem;
+  overflow-x: auto;
+}
+
+.chipGenero {
+  flex-shrink: 0;       /* sem isso os botoes ficam espremidos, nao mexe */
+  padding: 0.4rem 1rem;
+  color: var(--branco);
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid var(--ouroBorda);
+  border-radius: 999px;
+}
+
+.chipGenero:hover {
+  border-color: var(--amarelo);
+}
+
+/* O gênero que está aberto fica preenchido */
+.chipAtivo {
+  background-color: var(--amarelo);
+  border-color: var(--amarelo);
+  color: var(--preto);
+  font-weight: bold;
+}
+
+
+/* ---------- 4. FILTROS ---------- */
+
+.barraFiltros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px double var(--ouroBorda)
+}
+
+.abasFiltro {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.abaFiltro {
+  padding: 0.5rem 1.1rem;
+  background: none;
+  color: var(--branco);
+  font-family: var(--fonteTexto);
+  font-size: 0.95rem;
+  border: 1px solid var(--ouroBorda);
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.abaFiltro:hover {
+  border-color: var(--amarelo);
+}
+
+.abaAtiva {
+  background-color: var(--amarelo);
+  border-color: var(--amarelo);
+  color: var(--preto);
+  font-weight: bold;
+}
+
+.rotuloEpoca {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--cinzaClaro);
+  font-size: 0.95rem;
+}
+
+.seletorEpoca {
+  padding: 0.45rem 0.8rem;
+  background-color: var(--preto);
+  color: var(--branco);
+  font-family: var(--fonteTexto);
+  font-size: 0.95rem;
+  border: 1px solid var(--ouroBorda);
+  border-radius: 0.3rem;
+}
+
+/* margin-left: auto joga os filmes pro canto  da direitAw */
+.contagemFilmes {
+  margin-left: auto;
+  color: var(--cinzaClaro);
+  font-size: 0.95rem;
+}
+
+
+/* ---------- 5. CARTÕES DOS FILMES ---------- */
+
+/* 2 cartões por linha, e o justify-content: center faz o filme que sobrar embaixo ficar no meio */
+.listaFilmes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.itemFilme {
+  width: calc(50% - 0.75rem);
+}
+
+.cartaoFilme {
+  position: relative;
+  display: flex;
+  gap: 1.2rem;
+  height: 100%;          /* os dois cartões da linha ficam do mesmo tamanho */
+  padding: 1.2rem;
+  background: linear-gradient(160deg, var(--azulEscuro) 0%, var(--preto) 85%);
+  border: 1px solid var(--ouroBorda);
+  border-radius: 0.3rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.cartaoFilme::before {
+  content: "";
+  position: absolute;
+  inset: 0.4rem;
+  border: 1px solid rgba(var(--amareloRgb), 0.25);
+  border-radius: 0.15rem;
+  pointer-events: none;
+}
+
+.cartaoFilme:hover {
+  border-color: var(--amarelo);
+  transform: translateY(-3px);
+}
+
+/* A capa tem borda dupla (a borda e o box-shadow) */
+.capaFilme {
+  position: relative;    /* pro numero da posiçao ficar encima da capa */
+  flex-shrink: 0;
+  width: 9rem;
+  align-self: flex-start;
+  aspect-ratio: 2 / 3;
+  border: 2px solid var(--amarelo);
+  border-radius: 0.2rem;
+  box-shadow: 0 0 0 4px var(--preto), 0 0 0 5px var(--ouroBorda);
+}
+
+.imagemCapa {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Bolinha com o ranking do filme */
+.posicaoFilme {
+  position: absolute;
+  top: -0.8rem;
+  left: -0.8rem;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--amarelo);
+  color: var(--preto);
+  font-family: var(--fonteTitulo);
+  font-weight: bold;
+  border: 2px solid var(--preto);
+  border-radius: 50%;
+}
+
+.infoFilme {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tituloFilme {
+  font-family: var(--fonteTitulo);
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.metaFilme {
+  margin: 0.3rem 0 0.6rem;
+  color: var(--cinzaClaro);
+  font-size: 0.9rem;
+}
+
+.notaFilme {
+  margin-bottom: 0.6rem;
+  color: var(--amarelo);
+  font-weight: bold;
+}
+
+/* isso orta a sinopse em 4 linhas e coloca ... no final */
+.sinopseFilme {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+  color: var(--cinzaClaro);
+  font-size: 0.9rem;
+}
+
+.linkDetalhes {
+  margin-top: auto;
+  align-self: flex-start;
+  color: var(--amarelo);
+  font-family: var(--fonteTitulo);
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 3px double transparent;
+}
+
+.linkDetalhes:hover {
+  border-bottom-color: var(--amarelo);
+}
+
+/* Mensagem quando o filtro não acha nenhum filme */
+.semFilmes {
+  padding: 2rem 0;
+  color: var(--cinzaClaro);
+  text-align: center;
+}
+
+
+/* ---------- 6. RESPONSIVO ---------- */
+
+/* Tablet e celular */
+@media (max-width: 900px) {
+  .itemFilme {
+    width: 100%;
+  }
+}
+
+/* Celular pequeno (j1 pocket mini kkkkk)*/
+@media (max-width: 480px) {
+  .capaFilme {
+    width: 6.5rem;
+  }
+
+  .cartaoFilme {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .abasFiltro {
+    flex-wrap: wrap;
+  }
+
+  .contagemFilmes {
+    margin-left: 0;
+    width: 100%;
+  }
+}
