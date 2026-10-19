@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+  ===========================================================================
+  A vida e Bela — gênero: Comédia*+
+  ===========================================================================
+  Página baseada em "modelo-pagina-filme.html". A estrutura (tags, classes,
+  IDs e ordem das seções) segue o modelo e o wireframe:
+  Voltar > Capa + Ficha técnica + Sinopse > Trailer > Onde assistir.
+  Usa um único arquivo de CSS, que estiliza a página inteira
+  (css/filmes/comedia/a_vida_e_bela.css).
+  ===========================================================================
+-->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A vida é Bela | TopFive Cinema</title>
+
+    <!-- CSS único desta página (tema/paleta próprios de A vida e Bela) -->
+    <link rel="stylesheet" href="../../css/filmes/comedia/a_vida_e_bela.css">
+    <link rel="stylesheet" href="../../css/header.css">
+</head>
+<body data-genero="comedia" data-filme="a_vida_e_bela">
+
+    <!-- OPÇÃO B: Vídeo de fundo.
+         Para usar: descomente este bloco E comente a OPÇÃO A no CSS
+         (a variável --imagem-fundo e o body::before). -->
+    <!--
+    <video class="fundo-video" autoplay muted loop playsinline aria-hidden="true">
+        <source src="../../assets/video/comedia/a_vida_e_bela.mp4" type="video/mp4">
+    </video>
+    -->
+
+    <header class="headerPrincipal">
+        <div class="conteudoHeader">
+
+            <a class="logo" href="index.html">
+                <img class="imagemLogo" src="../../img/logo-header.svg" alt="TopFive Cinema">
+            </a>
+
+            <button class="botaoMenu" id="botaoMenu" aria-label="Abrir menu">☰</button>
+
+            <nav class="menu" id="menu">
+                <ul>
+                    <li><a class="linkMenu" href="../../sobre.html">Sobre</a></li>
+                    <li><a class="linkMenu" href="../../filmes.html">Filmes</a></li>
+                    <li><a class="linkMenu" href="../../contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <a href="../../filmes.html#comedia" class="botao-voltar">&larr; Voltar para Comédia</a>
+
+        <article class="filme">
+            <section class="filme-topo" aria-label="Capa e informações do filme">
+                <figure class="filme-capa">
+                    <img src="../../img/filmes/comedia/a_vida_e_bela.webp"
+                         alt="Capa do filme A vida e Bela">
+                    <figcaption>Capa do filme</figcaption>
+                </figure>
+
+                <section class="filme-info" aria-label="Informações do filme">
+                    <h1>A vida e Bela</h1>
+                    <p class="filme-titulo-original">Título original: <em>La Vita è Bella</em></p>
+
+                    <dl class="filme-ficha">
+                        <dt>Gênero</dt>
+                        <dd>Comédia</dd>
+
+                        <dt>Ano</dt>
+                        <dd>1997</dd>
+
+                        <dt>Direção</dt>
+                        <dd>Roberto Benigni</dd>
+
+                        <dt>Nota IMDb</dt>
+                        <dd>8,6</dd>
+                    </dl>
+
+                    <section class="filme-sinopse" aria-labelledby="titulo-sinopse">
+                        <h2 id="titulo-sinopse">Sinopse</h2>
+                        <p>O filme conta a história de Guido, um jovem judeu que vive em uma pequena cidade da Itália durante a Segunda Guerra Mundial.
+                             Ele se casa com sua amada e tem um filho. Quando é levado para um campo de concentração, ele cria um jogo para proteger seu filho da realidade cruel do Holocausto.</p>
+                    </section>
+                </section>
+            </section>
+
+            <section class="filme-trailer" aria-labelledby="titulo-trailer">
+                <h2 id="titulo-trailer">Trailer</h2>
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/61KtbjYtppQ?si=UJvqg3m2RVaF_mfv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </section>
+
+            <section class="filme-onde-assistir" aria-labelledby="titulo-onde-assistir">
+                <h2 id="titulo-onde-assistir">Onde assistir</h2>
+                <ul>
+                                        <li>Prime Video (aluguel) <a href="https://www.primevideo.com/-/pt/detail/0SDRY81ZJBYNYL7N4WEOQQVW8U" target="_blank"> Veja o Filme!</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer class="rodapePrincipal">
+        <span class="linhaRodape" aria-hidden="true"></span>
+        <nav class="menuRodape" aria-label="Rodapé">
+            <p>Top Five Cinema™ - 2026</p>
+            <a href="sobre.html">Sobre</a>
+            <a href="filmes.html">Filmes</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+        <span class="linhaRodape" aria-hidden="true"></span>
+    </footer>
+
+
+    <script src="../../js/header.js"></script>
+
+</body>
+</html>
