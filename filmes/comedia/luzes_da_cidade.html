@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+  ===========================================================================
+  Luzes da Cidade — gênero: Comédia*+
+  ===========================================================================
+  Página baseada em "modelo-pagina-filme.html". A estrutura (tags, classes,
+  IDs e ordem das seções) segue o modelo e o wireframe:
+  Voltar > Capa + Ficha técnica + Sinopse > Trailer > Onde assistir.
+  Usa um único arquivo de CSS, que estiliza a página inteira
+  (css/filmes/comedia/Luzes_da_cidade.css).
+  ===========================================================================
+-->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Luzes da Cidade | TopFive Cinema</title>
+
+    <!-- CSS único desta página (tema/paleta próprios de Luzes da Cidade) -->
+    <link rel="stylesheet" href="../../css/filmes/comedia/luzes_da_cidade.css">
+    <link rel="stylesheet" href="../../css/header.css">
+</head>
+<body data-genero="comedia" data-filme="luzes_da_cidade">
+
+    <!-- OPÇÃO B: Vídeo de fundo.
+         Para usar: descomente este bloco E comente a OPÇÃO A no CSS
+         (a variável --imagem-fundo e o body::before). -->
+    <!--
+    <video class="fundo-video" autoplay muted loop playsinline aria-hidden="true">
+        <source src="../../assets/video/comedia/luzes_da_cidade.mp4" type="video/mp4">
+    </video>
+    -->
+
+    <header class="headerPrincipal">
+        <div class="conteudoHeader">
+
+            <a class="logo" href="index.html">
+                <img class="imagemLogo" src="../../img/logo-header.svg" alt="TopFive Cinema">
+            </a>
+
+            <button class="botaoMenu" id="botaoMenu" aria-label="Abrir menu">☰</button>
+
+            <nav class="menu" id="menu">
+                <ul>
+                    <li><a class="linkMenu" href="../../sobre.html">Sobre</a></li>
+                    <li><a class="linkMenu" href="../../filmes.html">Filmes</a></li>
+                    <li><a class="linkMenu" href="../../contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <a href="../../filmes.html#comedia" class="botao-voltar">&larr; Voltar para Comédia</a>
+
+        <article class="filme">
+            <section class="filme-topo" aria-label="Capa e informações do filme">
+                <figure class="filme-capa">
+                    <img src="../../img/filmes/comedia/luzes_da_cidade.webp"
+                         alt="Capa do filme Luzes da Cidade">
+                    <figcaption>Capa do filme</figcaption>
+                </figure>
+
+                <section class="filme-info" aria-label="Informações do filme">
+                    <h1>Luzes da Cidade</h1>
+                    <p class="filme-titulo-original">Título original: <em>City Lights</em></p>
+
+                    <dl class="filme-ficha">
+                        <dt>Gênero</dt>
+                        <dd>Comédia</dd>
+
+                        <dt>Ano</dt>
+                        <dd>1931</dd>
+
+                        <dt>Direção</dt>
+                        <dd>Charlie Chaplin</dd>
+
+                        <dt>Nota IMDb</dt>
+                        <dd>8,5</dd>
+                    </dl>
+
+                    <section class="filme-sinopse" aria-labelledby="titulo-sinopse">
+                        <h2 id="titulo-sinopse">Sinopse</h2>
+                        <p>Com a ajuda de um homem rico, bêbado e imprevisível, 
+                            um vagabundo ingênuo que se apaixonou por uma florista cega tenta conseguir dinheiro para fornecer ajuda médica.</p>
+                    </section>
+                </section>
+            </section>
+
+            <section class="filme-trailer" aria-labelledby="titulo-trailer">
+                <h2 id="titulo-trailer">Trailer</h2>
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/7vl7F8S4cpQ?si=1kOLxKrffMOJoTUj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </section>
+
+            <section class="filme-onde-assistir" aria-labelledby="titulo-onde-assistir">
+                <h2 id="titulo-onde-assistir">Onde assistir</h2>
+                <ul>
+                    <li>Prime Video (assinatura) <a href="https://www.primevideo.com/dp/amzn1.dv.gti.31477305-f0bb-489d-91c1-4e9c4afe0070?ref_=atv_cf_strg_wb"_blank"> Veja o FIlme!</a></li>
+                    <li>Apple TV (assinatura) <a href="https://tv.apple.com/br/movie/luzes-da-cidade/umc.cmc.6n59ydvc5tp08sgucbaovxogi" target="_blank"> Veja o Filme!</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer class="rodapePrincipal">
+        <span class="linhaRodape" aria-hidden="true"></span>
+        <nav class="menuRodape" aria-label="Rodapé">
+            <p>Top Five Cinema™ - 2026</p>
+            <a href="sobre.html">Sobre</a>
+            <a href="filmes.html">Filmes</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+        <span class="linhaRodape" aria-hidden="true"></span>
+    </footer>
+
+
+    <script src="../../js/header.js"></script>
+
+</body>
+</html>
