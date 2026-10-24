@@ -61,7 +61,7 @@ Os filmes foram selecionados com base nas avaliações do **IMDb** (mínimo de 2
 
 Acesse a versão publicada via GitHub Pages:
 
-[![Acessar](https://img.shields.io/badge/▶️_ACESSAR-TopFive_Cinema-f0c020?style=for-the-badge)](https://SEU-USUARIO.github.io/NOME-DO-REPOSITORIO/)
+[![Acessar](https://img.shields.io/badge/▶️_ACESSAR-TopFive_Cinema-f0c020?style=for-the-badge)](https://nerd8im.github.io/TopFiveCinema/)
 
 Clique no botão acima para abrir o site direto no navegador, sem instalação necessária.
 
