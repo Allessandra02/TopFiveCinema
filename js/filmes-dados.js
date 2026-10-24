@@ -115,7 +115,7 @@ var GENEROS = {
         "nota": "8,5",
         "votos": "cerca de 780 mil votos",
         "sinopse": "Uma secretária em fuga, depois de desviar dinheiro, se refugia em um motel isolado na Califórnia, administrado por um homem reprimido e por sua mãe autoritária.",
-        "capa": "img/filmes/terror/psicose.webp",
+        "capa": "img/filmes/terror/Psicose.webp",
         "pagina": "filmes/terror/psicose.html"
       },
       {
