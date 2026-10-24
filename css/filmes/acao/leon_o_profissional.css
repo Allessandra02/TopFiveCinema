@@ -60,7 +60,7 @@
     filter: blur(4px);
     transform: scale(1.05);
     z-index: -1;
-  }*/
+  }
   
   /* ---------- 2.2 OPÇÃO B: Vídeo de fundo ----------
      Só funciona se o <video class="fundo-video"> estiver
