@@ -39,7 +39,7 @@ var GENEROS = {
         "votos": "1,3 milhão de votos",
         "sinopse": "Um ciborgue, idêntico ao que fracassou em matar Sarah Connor, agora deve proteger o filho dela, John, de 10 anos, de um ciborgue mais avançado e poderoso.",
         "capa": "img/filmes/acao/o_exterminador_do_futuro_2.webp",
-        "pagina": "filmes/acao/o_exterminador_do_futuro_2.html"
+        "pagina": "filmes/acao/o_exterminador_do_futuro.html"
       },
       {
         "posicao": 3,
@@ -50,7 +50,7 @@ var GENEROS = {
         "votos": "cerca de 385 mil votos",
         "sinopse": "Camponeses de uma aldeia explorada por bandidos contratam um samurai veterano para protegê-los, e ele reúne outros seis guerreiros para ajudá-lo.",
         "capa": "img/filmes/acao/os_sete_samurais.webp",
-        "pagina": "filmes/acao/os_sete_samurais.html"
+        "pagina": "filmes/acao/Os_Sete_Samurais.html"
       },
       {
         "posicao": 4,
