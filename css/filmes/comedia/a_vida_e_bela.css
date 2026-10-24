@@ -1,37 +1,35 @@
 /* ===========================================================================
-   CSS ÚNICO — Your Name (Kimi no Na wa) (Romance)
+   CSS ÚNICO — A vida e Bela (Comédia)
    ===========================================================================
    Esta página usa apenas este arquivo de CSS (não existe style.css ligado).
    Ele cuida da página inteira: base, header, nav, main e footer.
 
    PADRÃO DO SITE: todas as páginas de filme usam exatamente as mesmas
    regras de estrutura (formas, botões, tipografia, espaçamentos e sombras).
-   O que muda de filme para filme é só a paleta de cores, na seção 1.
+   O que muda de filme para filme é SÓ a paleta de cores, na seção 1.
 
-   Ligado a partir de: filmes/romance/your_name.html
+   Ligado a partir de: filmes/comedia/a_vida_e_bela.html
    =========================================================================== */
 
 
 /* ---------- 1. Paleta (única parte que muda entre as páginas de filme) ---------- */
 :root {
-  --fundo-topo: #121829;       
-  --fundo-meio: #0b0e1a;       
-  --fundo-base: #05060d;       
-  --cabecalho: #0e1221;       
-  --painel: #1b233d;           
-  --borda: #ff455b;            
-  --borda-suave: #263154;      
-  --texto: #ffffff;           
-  --texto-suave: #9bb1ff;      
-  --destaque: #00e5ff;       
-  --secundaria: #ff7643;     
-  --sobre-destaque: #05060d;   
-  --sobre-secundaria: #ffffff; 
-  --brilho: rgba(0, 229, 255, 0.25); 
-  
-  --imagem-fundo: url("../../../img/filmes/romance/your-name-fundo.webp");
+  --fundo-topo: #2a1f1d;
+  --fundo-meio: #1c1413;
+  --fundo-base: #110c0b;
+  --cabecalho: #101626;
+  --painel: #2f2220;
+  --borda: #5c4436;
+  --borda-suave: #3f2e25;
+  --texto: #f9f3e6;
+  --texto-suave: #cbb89e;
+  --destaque: #d4a359;
+  --secundaria: #8b263e;
+  --sobre-destaque: #1c1413;
+  --brilho: rgba(212, 163, 89, 0.15);
+  /* OPÇÃO A: imagem de fundo (comente esta linha para usar vídeo) */
+  --imagem-fundo: url("../../../img/filmes/comedia/a_vida_e_bela_fundo.webp");
 }
-
 
 
 /* ---------- 2. Base da página ---------- */
@@ -45,6 +43,9 @@ body {
   line-height: 1.6;
 }
 
+/* ---------- 2.1 OPÇÃO A: Imagem de fundo ----------
+   Para usar VÍDEO no lugar: comente este bloco inteiro
+   (e a variável --imagem-fundo na seção 1). */
 body::before {
   content: "";
   position: fixed;
@@ -52,12 +53,26 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(10, 16, 25, 0.5), rgba(10, 16, 25, 0.5)), var(--imagem-fundo);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), var(--imagem-fundo);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   filter: blur(4px);
   transform: scale(1.05);
+  z-index: -1;
+}
+
+/* ---------- 2.2 OPÇÃO B: Vídeo de fundo ----------
+   Só funciona se o <video class="fundo-video"> estiver
+   descomentado no HTML. */
+.fundo-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
   z-index: -1;
 }
 
@@ -126,7 +141,7 @@ main {
 .botao-voltar:hover,
 .botao-voltar:focus {
   background-color: var(--secundaria);
-  color: var(--sobre-secundaria);
+  color: var(--sobre-destaque);
 }
 
 
@@ -200,7 +215,7 @@ main {
 
 .filme h2 {
   margin: 0 0 16px;
-  color: var(--secundaria);
+  color: var(--destaque);
   font-size: 20px;
   letter-spacing: 3px;
 }
@@ -296,7 +311,6 @@ main {
 .filme-onde-assistir a:hover,
 .filme-onde-assistir a:focus {
   background-color: var(--secundaria);
-  color: var(--sobre-secundaria);
   transform: scale(1.05);
 }
 
@@ -357,5 +371,12 @@ main {
 
   .filme-ficha dd {
     width: 60%;
+  }
+}
+
+/* Quem pediu menos animação no sistema não vê o vídeo */
+@media (prefers-reduced-motion: reduce) {
+  .fundo-video {
+    display: none;
   }
 }

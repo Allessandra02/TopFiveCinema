@@ -1,5 +1,5 @@
 /* ===========================================================================
-   CSS ÚNICO — A Felicidade Não se Compra (It's a Wonderful Life) (Romance)
+   CSS ÚNICO — Tempos Modernos (Comédia)
    ===========================================================================
    Esta página usa apenas este arquivo de CSS (não existe style.css ligado).
    Ele cuida da página inteira: base, header, nav, main e footer.
@@ -8,28 +8,27 @@
    regras de estrutura (formas, botões, tipografia, espaçamentos e sombras).
    O que muda de filme para filme é SÓ a paleta de cores, na seção 1.
 
-   Ligado a partir de: filmes/romance/a_felicidade_nao_se_compra.html
+   Ligado a partir de: filmes/comedia/tempos_modernos.html
    =========================================================================== */
 
 
 /* ---------- 1. Paleta (única parte que muda entre as páginas de filme) ---------- */
 :root {
-  --fundo-topo: #1a2536;       
-  --fundo-meio: #121b28;       
-  --fundo-base: #0a1019;       
-  --cabecalho: #141d2a;       
-  --painel: #f9fbfc;           
-  --borda: #3b4f6b;            
-  --borda-suave: #28374d;      
-  --texto: #094bad;           
-  --texto-suave: #b0c2de;      
-  --destaque: #d32f2f;       
-  --secundaria: #b81414;     
-  --sobre-destaque: #ffffff;   
-  --sobre-secundaria: #10161d; 
-  --brilho: rgba(250, 196, 196, 0.22); 
-  
-  --imagem-fundo: url("../../../img/filmes/romance/filme-felicidade-compra-fundo.webp");
+  --fundo-topo: #1e2228;
+  --fundo-meio: #14171c;
+  --fundo-base: #0c0e12;
+  --cabecalho: #101626;
+  --painel: #2d333d;
+  --borda: #606d7e;
+  --borda-suave: #3a424d;
+  --texto: #f0f3f6;
+  --texto-suave: #96a3b3;
+  --destaque: #e88d35;
+  --secundaria: #adb7c4;
+  --sobre-destaque: #14171c;
+  --brilho: rgba(232, 141, 53, 0.16);
+  /* OPÇÃO A: imagem de fundo (comente esta linha para usar vídeo) */
+  --imagem-fundo: url("../../../img/filmes/comedia/tempos_modernos_fundo.webp");
 }
 
 
@@ -44,6 +43,9 @@ body {
   line-height: 1.6;
 }
 
+/* ---------- 2.1 OPÇÃO A: Imagem de fundo ----------
+   Para usar VÍDEO no lugar: comente este bloco inteiro
+   (e a variável --imagem-fundo na seção 1). */
 body::before {
   content: "";
   position: fixed;
@@ -51,12 +53,26 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(10, 16, 25, 0.5), rgba(10, 16, 25, 0.5)), var(--imagem-fundo);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), var(--imagem-fundo);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   filter: blur(4px);
   transform: scale(1.05);
+  z-index: -1;
+}
+
+/* ---------- 2.2 OPÇÃO B: Vídeo de fundo ----------
+   Só funciona se o <video class="fundo-video"> estiver
+   descomentado no HTML. */
+.fundo-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
   z-index: -1;
 }
 
@@ -125,7 +141,7 @@ main {
 .botao-voltar:hover,
 .botao-voltar:focus {
   background-color: var(--secundaria);
-  color: var(--sobre-secundaria);
+  color: var(--sobre-destaque);
 }
 
 
@@ -199,7 +215,7 @@ main {
 
 .filme h2 {
   margin: 0 0 16px;
-  color: var(--secundaria);
+  color: var(--destaque);
   font-size: 20px;
   letter-spacing: 3px;
 }
@@ -295,7 +311,6 @@ main {
 .filme-onde-assistir a:hover,
 .filme-onde-assistir a:focus {
   background-color: var(--secundaria);
-  color: var(--sobre-secundaria);
   transform: scale(1.05);
 }
 
@@ -356,5 +371,12 @@ main {
 
   .filme-ficha dd {
     width: 60%;
+  }
+}
+
+/* Quem pediu menos animação no sistema não vê o vídeo */
+@media (prefers-reduced-motion: reduce) {
+  .fundo-video {
+    display: none;
   }
 }
